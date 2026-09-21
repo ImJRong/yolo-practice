@@ -7,6 +7,6 @@ echo.
 echo  ==========================================
 echo   [yolo] env ready
 echo   dir : D:\yolo-practice
-echo   run : python day2.py
+echo   run : python src/test.py
 echo  ==========================================
 echo.
