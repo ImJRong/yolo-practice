@@ -9,9 +9,6 @@ __pycache__/
 venv/
 env/
 
-# 运行结果图（不传，本地留）
-output/
-
 # 系统文件
 Thumbs.db
 .DS_Store
