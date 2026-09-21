@@ -9,8 +9,11 @@ __pycache__/
 venv/
 env/
 
-# 结果图片
-result*.jpg
+# 图片文件 - 一律不上传（私人照片 + 结果图）
+*.jpg
+*.jpeg
+*.png
+*.bmp
 
 # 系统文件
 Thumbs.db
