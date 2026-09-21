@@ -1,63 +1,100 @@
-# yolo-practice
+# 文件夹使用说明
 
-YOLO + OpenCV 学习项目（武汉理工大学 · 电子信息 研一）
+## 一句话
 
-## 目录结构
+**代码里凡是提到文件，前面都要加文件夹名。**
 
-```
-yolo-practice/
-├── models/       模型权重（*.pt，不上传 git）
-├── data/         测试图片
-├── src/          所有 Python 脚本
-├── output/       检测结果图（不上传 git）
-├── .vscode/      VS Code 配置
-├── .gitignore
-├── start-yolo.bat   一键进环境
-└── 学习日志.md      学习记录
-```
+---
 
-## 怎么跑
+## 三个必须加前缀的地方
 
-**所有命令都从项目根目录执行**（`D:\yolo-practice`）：
-
-```powershell
-python src/test.py
-python src/cv_basics.py
-python src/cv_draw.py
-```
-
-不要 `cd src` 再跑，否则里面的相对路径会失效。
-
-也可以双击桌面的 `YOLO 终端.lnk`，自动进环境并切到项目根目录。
-
-## 环境
-
-- conda 环境：`yolo`（Python 3.11）
-- 提示符要出现 `(yolo)` 才算激活成功
-- 解释器：`D:\miniconda3\envs\yolo\python.exe`
-
-## 路径约定
-
-脚本里的路径一律相对**项目根目录**写：
+### 1. 模型 → 加 `models/`
 
 ```python
-model = YOLO("models/yolov8m.pt")        # 模型
-img = cv2.imread("data/bus.png")         # 输入图
-cv2.imwrite("output/result.png", img)    # 输出图
+model = YOLO("models/yolov8m.pt")     ✅
+model = YOLO("yolov8m.pt")            ❌
 ```
 
-## 脚本说明
+**已有的模型文件**（都在 `models/`）：
 
-| 文件 | 干什么 |
-|---|---|
-| `src/test.py` | 检测单张图，打印类别/置信度/坐标 |
-| `src/p1.py` | 数一张图里有几个人 |
-| `src/p2.py` | 批量检测 4 张图，分别保存结果 |
-| `src/cv_basics.py` | OpenCV 基础：形状、索引、切片、缩放、灰度 |
-| `src/cv_draw.py` | YOLO 检测 + OpenCV 手动画框 |
-| `src/day2_explain.py` | 逐行讲解版（学习用） |
+```
+models/yolov8n.pt         小，快
+models/yolov8s.pt         中
+models/yolov8m.pt         大，准（常用这个）
+models/yolov8n-pose.pt    姿态估计
+```
 
-## Git
+### 2. 输入图片 → 加 `data/`
 
-- 远程：`git@github.com:ImJRong/yolo-practice.git`（Private）
-- `*.pt` 和 `output/` 已被 `.gitignore` 排除
+```python
+img = cv2.imread("data/bus.png")             ✅
+results = model("data/test1.jpg")            ✅
+img = cv2.imread("bus.png")                  ❌
+```
+
+**已有的图片**（都在 `data/`）：
+
+```
+data/bus.png       公交车
+data/test.jpg      自拍
+data/test1.jpg     自拍
+data/image1.png    合照
+data/image2.png
+data/image3.png
+data/image4.png
+```
+
+### 3. 输出图片 → 加 `output/`
+
+```python
+cv2.imwrite("output/结果.png", img)                    ✅
+r.save(filename="output/result1.jpg")                  ✅
+cv2.imwrite("结果.png", img)                           ❌
+```
+
+**`output/` 是自己生成的**，跑完去这个文件夹看结果图。
+
+---
+
+## 模板：新脚本照抄
+
+```python
+from ultralytics import YOLO
+import cv2
+
+img = cv2.imread("data/图片名.png")              # 输入
+model = YOLO("models/yolov8m.pt")                # 模型
+
+results = model("data/图片名.png")               # 检测
+
+for r in results:
+    r.save(filename="output/结果.png")           # 输出
+
+cv2.imwrite("output/结果2.png", img)             # 输出
+```
+
+---
+
+## 跑代码的位置
+
+```powershell
+cd D:\yolo-practice          # 必须在根目录!!!!!!!!
+python src/test.py
+```
+
+**别 `cd src`** —— 那样 `data/`、`models/` 就找不到了。
+
+---
+
+## 检查清单
+
+写完代码扫一眼，三个问题：
+
+1. `YOLO(...)` 里的路径有没有 `models/`？
+2. 读图的路径有没有 `data/`？
+3. 存图的路径有没有 `output/`？
+
+**三个都是"是"，就不会报路径错误。**
+
+---
+
