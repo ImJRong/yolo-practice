@@ -1,0 +1,17 @@
+# 模型权重文件（太大，不传）
+*.pt
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+
+# 虚拟环境
+venv/
+env/
+
+# 结果图片
+result*.jpg
+
+# 系统文件
+Thumbs.db
+.DS_Store
