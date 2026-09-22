@@ -27,4 +27,8 @@ for b in result.boxes:
 
     cv2.rectangle(img, (x1, y1), (x2, y2), (0, 0, 255), 5)  # 画矩形（左上 右下 颜色 宽度）
 
-    img_cv = cv2.imwrite("output/bus_cv.png", img)
+    conf = float(b.conf)
+    text = f"bus {conf:.2f}"
+    cv2.putText(img, text, (x1, y1-8), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,0,255), 2) #文本标记
+    img_cv = cv2.imwrite("output/bus_cv.png", img)  #画框
+    
