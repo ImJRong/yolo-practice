@@ -7,6 +7,5 @@ echo.
 echo  ==========================================
 echo   [yolo] env ready
 echo   dir : D:\yolo-practice
-echo   run : python src/detect_image.py
 echo  ==========================================
 echo.
