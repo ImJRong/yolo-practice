@@ -14,7 +14,7 @@
 from ultralytics import YOLO
 
 # 加载预训练模型。models/ 目录下已经下载好了
-model = YOLO("models/yolov8n.pt")
+model = YOLO("models/yolov8m.pt")
 
 # 开始训练
 model.train(
