@@ -14,7 +14,7 @@
 from ultralytics import YOLO
 
 # 加载预训练模型。models/ 目录下已经下载好了
-model = YOLO("models/yolov8m.pt")
+model = YOLO("models/yolov8n.pt")       #妈的 数据太少 用v8m才得20多分，用v8n的70多分，数据少要用小模型训练，大模型参数多训练不饱
 
 # 开始训练
 model.train(
