@@ -1,0 +1,5 @@
+D:\yolo-practice\data\lane\images\lane_11.jpg
+D:\yolo-practice\data\lane\images\lane_17.jpg
+D:\yolo-practice\data\lane\images\lane_19.jpg
+D:\yolo-practice\data\lane\images\lane_22.jpg
+D:\yolo-practice\data\lane\images\lane_28.jpg
