@@ -12,3 +12,24 @@ env/
 # 系统文件
 Thumbs.db
 .DS_Store
+
+# ===== 以下都是「太大，不传 Git」的东西 =====
+
+# 数据集：cityscapes = 转换好的训练数据，6.6 GB
+data/cityscapes/
+
+# 数据集：cityscapes_raw = 原始下载包，12 GB
+data/cityscapes_raw/
+
+# 视频文件目录
+data/videos/
+
+# 视频一律不传（动辄几百 MB）
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# 训练输出（结果图、权重、曲线）——占地大、每次训练都变
+output/
+runs/

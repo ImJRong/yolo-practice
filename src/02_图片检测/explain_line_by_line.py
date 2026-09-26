@@ -25,9 +25,9 @@ model = YOLO("models/yolov8m.pt")
 # 第 3 部分：函数调用
 # ============================================================
 
-results = model("data/test1.jpg")
+results = model("data/images/test1.jpg")
 # model 后面加括号 = "让模型干活"
-# 括号里的 "data/test1.jpg" 是"喂给它的东西"（参数）
+# 括号里的 "data/images/test1.jpg" 是"喂给它的东西"（参数）
 # 干完的活，结果装进 results 这个盒子
 
 # ============================================================

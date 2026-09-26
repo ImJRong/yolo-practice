@@ -11,7 +11,7 @@ from ultralytics import YOLO
 import cv2
 
 # ============ 配置区（换视频只改这里） ============
-VIDEO = "data/girl3.mp4"        # 输入视频
+VIDEO = "data/videos/girl3.mp4"        # 输入视频
 MODEL = "models/yolov8n.pt"     # 模型
 MAX_W = 1200                    # 窗口最大宽度，超了就缩
 MAX_H = 800                     # 窗口最大高度，超了就缩

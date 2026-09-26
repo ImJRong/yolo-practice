@@ -19,7 +19,7 @@ os.makedirs("output/video_yolo", exist_ok=True)
 model = YOLO("models/yolov8m.pt")
 
 # 打开视频。cap 是操作视频的对象，之后都通过它来
-cap = cv2.VideoCapture("data/test1.mp4")
+cap = cv2.VideoCapture("data/videos/test1.mp4")
 
 # isOpened() 检查是否打开成功（路径错、文件不在会返回 False）
 if not cap.isOpened():

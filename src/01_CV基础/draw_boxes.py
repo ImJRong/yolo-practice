@@ -1,11 +1,11 @@
 from ultralytics import YOLO
 import cv2
 
-img = cv2.imread("data/bus.png")
+img = cv2.imread("data/images/bus.png")
 
 model = YOLO("models/yolov8m.pt")
 
-results = model("data/bus.png", classes=[5])
+results = model("data/images/bus.png", classes=[5])
 
 result = results[0]
 # 因为 box.xyxy 不是 [x1,y1,x2,y2]，它是装着 [x1,y1,x2,y2] 的盒子。

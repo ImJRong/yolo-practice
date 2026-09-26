@@ -13,8 +13,11 @@ from ultralytics import YOLO
 import cv2
 
 # ============ 配置区 ============
-VIDEO = "data/test1.mp4"                          # 想换视频改这里
-MODEL = "output/lane_train/weights/best.pt"       # 你自己训的模型
+#VIDEO = "data/videos/NewModelTest.mp4"                          # 想换视频改这里
+VIDEO = "data/videos/NewModelTestV2.mp4" 
+# MODEL = "output/lane_train/weights/best.pt"       # 你自己训的模型 v1
+MODEL = "output/lane_train_v2/weights/best.pt"          #v2
+
 MAX_W = 1200                                      # 窗口最大宽度
 MAX_H = 800                                       # 窗口最大高度
 # ===============================
@@ -48,7 +51,7 @@ while True:
     if not isread:
         break
 
-    results = model(frame, verbose=False)
+    results = model(frame, conf=0.4,verbose=False,iou=0.5)
     frame = results[0].plot()
 
     if show_w != width or show_h != height:

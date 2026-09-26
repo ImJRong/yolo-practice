@@ -10,7 +10,7 @@ model = YOLO("models/yolov8m.pt")
 
 # 检测 data 文件夹里的图片
 # 返回 results 是个列表，装了每张图的结果
-results = model("data/test1.jpg")
+results = model("data/images/test1.jpg")
 
 # 遍历每张图的结果（这里只有一张）
 for r in results:

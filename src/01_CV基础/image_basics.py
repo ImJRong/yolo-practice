@@ -7,7 +7,7 @@ import cv2
 # ---------- 1. 读图 ----------
 # cv2.imread() 把图片读成一张"数字表格"
 # 读不到文件时不会报错，直接返回 None（坑！）
-img = cv2.imread("data/bus.png")
+img = cv2.imread("data/images/bus.png")
 
 # 保险做法：检查有没有读成功
 if img is None:

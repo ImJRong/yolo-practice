@@ -8,11 +8,11 @@ red = (0,0,255)
 blue = (255,0,0)
 
 
-img = cv2.imread("data/car.png")
+img = cv2.imread("data/images/car.png")
 
 model = YOLO("models/yolov8m.pt")
 
-results = model("data/car.png", classes=[2])
+results = model("data/images/car.png", classes=[2])
 
 result = results[0]
 

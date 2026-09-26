@@ -2,7 +2,7 @@ from ultralytics import YOLO
 import cv2
 
 model = YOLO("models/yolov8m.pt")       #导入模型
-video = cv2.VideoCapture("data/girl.mp4")       #导视频
+video = cv2.VideoCapture("data/videos/girl.mp4")       #导视频
 
 if not video.isOpened():
     print("打不开视频，检查路径")

@@ -9,7 +9,7 @@ from ultralytics import YOLO
 model = YOLO("models/yolov8m.pt")
 
 # 检测图片，返回所有图的结果（列表）
-results = model("data/image1.png")
+results = model("data/images/image1.png")
 
 # 只看第一张图的结果
 r = results[0]

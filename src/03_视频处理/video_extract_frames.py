@@ -18,7 +18,7 @@ os.makedirs("output/video_yolo", exist_ok=True)
 
 model = YOLO("models/yolov8m.pt")
 
-cap = cv2.VideoCapture("data/test1.mp4")
+cap = cv2.VideoCapture("data/videos/test1.mp4")
 
 if not cap.isOpened():
     print("打不开视频，检查路径")

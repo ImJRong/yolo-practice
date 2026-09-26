@@ -11,10 +11,10 @@ model = YOLO("models/yolov8m.pt")
 # 一次喂进 4 张图
 # classes=[0] 表示只检测"人"，其他类别忽略
 results = model([
-    "data/image1.png",
-    "data/image2.png",
-    "data/image3.png",
-    "data/image4.png",
+    "data/images/image1.png",
+    "data/images/image2.png",
+    "data/images/image3.png",
+    "data/images/image4.png",
 ], classes=[0])
 
 # enumerate 会同时给出"序号 i"和"结果 r"
